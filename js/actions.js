@@ -21,9 +21,7 @@ var fn = {
             navigator.notification.beep(2);
         }else{
             navigator.notification.alert("Todos los campos son requeridos.",null,'Error','Aceptar');
-        }
-        
-        
+        } 
     }
 };
 $(fn.init);
