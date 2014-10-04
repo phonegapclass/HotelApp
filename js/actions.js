@@ -1,13 +1,13 @@
 //actions.js
 var fn = {
     init: function(){
-        document.addEventListener('deviceready',fn.device,false);
-    },
-    device: function(){
         var x = false;
         if(!x){
             window.location.href = '#reg';
         }
+        document.addEventListener('deviceready',fn.device,false);
+    },
+    device: function(){
         $('#regSend').click(fn.registro);
     },
     registro: function(){
