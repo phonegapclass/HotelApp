@@ -4,6 +4,9 @@ var fn = {
         document.addEventListener('deviceready',fn.device,false);
     },
     device: function(){
+        var x = false;
+        if(!x)
+            window.location.href = '#reg';
         $('#regSend').click(fn.registro);
     },
     registro: function(){
