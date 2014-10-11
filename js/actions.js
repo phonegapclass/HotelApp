@@ -25,7 +25,7 @@ var fn = {
         } 
     },
     enviarRegistro: function(nom, mail, tel, foto){
-        $( "body" ).loader( "show" );
+        $.mobile.loading( 'show' );
         $.ajax({
             type: "POST",
             url: "http://carlos.igitsoft.com/apps/test.php",
