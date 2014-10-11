@@ -29,10 +29,8 @@ var fn = {
             type: "POST",
             url: "http://carlos.igitsoft.com/apps/test.php",
             data: {nom:nom,mail:mail,tel:tel}
-        }).done(function(respuesta) {
-            alert('p1: ' + respuesta);
+        }).done(function(respuesta){
             if( respuesta == '1' ){
-                alert('p2: ' + respuesta);
                 myTransfer.subir(foto, "http://carlos.igitsoft.com/apps/test.php");
             }
         });

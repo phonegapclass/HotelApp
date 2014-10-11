@@ -1,13 +1,10 @@
 //fileTransfer.js
 var myTransfer = {
     subido: function(r){
-        alert('p3: ' + r.response);
         if(r.response == '1'){
-            alert('p4');
             navigator.notification.alert("Se ha registrado correctamente",function(){
                 window.location.href = '#home';
                 //Asignar Registro Local
-                alert('p5');
             },"Felicidades","Aceptar");
         }
     },
