@@ -20,5 +20,5 @@ var myTransfer = {
 
 myTransfer.opciones.fileKey = "foto";
 myTransfer.opciones.fileName = "Carlos";
-myTransfer.opciones.mimeType = "image/jpg";
+myTransfer.opciones.mimeType = "image/jpeg";
 myTransfer.opciones.params = {value1: 'Text',value2: 'param'};
