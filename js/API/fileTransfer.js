@@ -15,7 +15,7 @@ var myTransfer = {
         navigator.notification.alert("Error: "+err.code,null,"Error","Aceptar");
     },
     opciones: new FileUploadOptions(),
-    ft: new FileTransfer();
+    ft: new FileTransfer()
 };
 
 myTransfer.opciones.fileKey = "foto";
