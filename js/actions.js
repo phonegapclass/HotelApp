@@ -30,8 +30,12 @@ var fn = {
             url: "http://carlos.igitsoft.com/apps/test.php",
             data: {nom:nom,mail:mail,tel:tel}
         }).done(function(respuesta) {
-            if( respuesta == '1' )
+            alert('p1: ' + respuesta);
+            if( respuesta == '1' ){
+                alert('p2: ' + respuesta);
                 myTransfer.ft.upload(foto, "http://carlos.igitsoft.com/apps/test.php", myTransfer.subido,myTransfer.error,myTransfer.opciones,true);
+                
+            }
         });
     }
 };
