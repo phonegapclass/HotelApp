@@ -11,10 +11,10 @@ var myTransfer = {
             },"Felicidades","Aceptar");
         }
     },
-    /*error: function(err){
+    error: function(err){
         navigator.notification.alert("Error: "+err.code,null,"Error","Aceptar");
     },
-    opciones: new FileUploadOptions(),
+    /*opciones: new FileUploadOptions(),
     ft: new FileTransfer()*/
 };
 
