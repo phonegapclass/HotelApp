@@ -70,7 +70,13 @@ var fn = {
         var di = $('#nrDia').val();
         
         if(th != '' && ha != '' && pr != '' && di != ''){
-            alert();
+            if(connection.estaConectado()){
+                //Enviar Reserva a servidor
+                alert();
+            }else{
+                //Guardar los datos hasta conexión
+                db.agregarPendientes(th,ha,pr,di);
+            }
         }else{
             alert('Todos los campos son requeridos');
         }
