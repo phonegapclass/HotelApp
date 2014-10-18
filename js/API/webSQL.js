@@ -33,7 +33,7 @@ var db = {
     },
     exitoHistorial: function(){
         $.mobile.loading( 'hide' );
-        navigator.notification.alert('Reserva en espera de conexión',null,'Guardado','Aceptar');
+        navigator.notification.alert('Se ha registrado su reserva',null,'Reserva Exitosa','Aceptar');
     },
     error: function(err){
         $.mobile.loading( 'hide' );
