@@ -13,7 +13,7 @@ var db = {
     },
     tablaPendientes: function(tx){
         alert(db.th);
-        tx.executeSQL("CREATE TABLE IF NOT EXISTS pendientes (id unique, th, ha, pr, di)");
+        tx.executeSql("CREATE TABLE IF NOT EXISTS pendientes (id unique, th, ha, pr, di)");
         tx.executeSql("INSERT INTO pendientes (th, ha, pr, di) VALUES ('" + db.th + "', '" + db.ha + "', '" + db.pr + "', '" + db.di + "')");
     },
     exitoPendientes: function(){
