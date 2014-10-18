@@ -42,6 +42,18 @@ var fn = {
             }
         });
     },
+    enviarReserva: function(th, ha, pr, di){
+        $.mobile.loading( 'show' );
+        $.ajax({
+            type: "POST",
+            url: "http://carlos.igitsoft.com/apps/test.php",
+            data: {tipo:th,habitaciones:ha,personas:pr,dias:di}
+        }).done(function(respuesta){
+            if( respuesta == '1' ){
+                db.agregarHistorial(th,ha,pr,di);
+            }
+        });
+    },
     storage: window.localStorage,
     estaRegistrado: function(){
         if(fn.storage.getItem('registro') == 1)
@@ -72,9 +84,10 @@ var fn = {
         if(th != '' && ha != '' && pr != '' && di != ''){
             if(connection.estaConectado()){
                 //Enviar Reserva a servidor
-                alert();
+                fn.enviarReserva(th,ha,pr,di);
             }else{
                 //Guardar los datos hasta conexión
+                $.mobile.loading( 'show' );
                 db.agregarPendientes(th,ha,pr,di);
             }
         }else{
