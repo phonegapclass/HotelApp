@@ -13,6 +13,10 @@ var fn = {
         $('#showStorage').tap(function(){
             alert(fn.storage.getItem('registro'));
         });
+        
+        $('#nr1 ul[data-role=listview] li').tap(fn.selectTH);
+        $('#nr1 div[data-role=navbar] ul li:eq(1)').tap(fn.nrNext);
+        $('#nr2 div[data-role=navbar] ul li:eq(1)').tap(fn.reservar);
     },
     registro: function(){
         var nombre = $('#regName').val();
@@ -44,6 +48,32 @@ var fn = {
             return true;
         else
             return false;
+    },
+    selectTH: function(){
+        if($(this).index()>0){
+            $('#nr1 ul[data-role=listview] li a').css('background-color','');
+            $(this).find('a').css('background-color','#a9a9a9');
+            $('#nr1').attr('th',$(this).index());
+        }
+    },
+    nrNext: function(){
+        if($('#nr1').attr('th') != undefined && $('#nr1').attr('th') != ''){
+            window.location.href = "#nr2";
+        }else{
+            alert('Es necesario seleccionar un tipo de habitación');
+        }
+    },
+    reservar: function(){
+        var th = $('#nr1').attr('th');
+        var ha = $('#nrHab').val();
+        var pr = $('#nrPer').val();
+        var di = $('#nrDia').val();
+        
+        if(th != '' && ha != '' && pr != '' && di != ''){
+            alert();
+        }else{
+            alert('Todos los campos son requeridos');
+        }
     }
 };
 $(fn.init);
