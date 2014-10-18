@@ -9,7 +9,7 @@ var db = {
         db.ha = ha;
         db.pr = pr;
         db.di = di;
-        db.crearDB.transaction(db.tablaPendientes,db.error,db.exitoPendientes);
+        db.crearDB().transaction(db.tablaPendientes,db.error,db.exitoPendientes);
     },
     tablaPendientes: function(tx){
         alert(db.th);
