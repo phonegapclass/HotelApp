@@ -4,7 +4,6 @@ var db = {
         return obj;
     },
     agregarPendientes: function(th,ha,pr,di){
-        alert(1);
         db.th = th;
         db.ha = ha;
         db.pr = pr;
@@ -12,7 +11,6 @@ var db = {
         db.crearDB().transaction(db.tablaPendientes,db.error,db.exitoPendientes);
     },
     tablaPendientes: function(tx){
-        alert(db.th);
         tx.executeSql("CREATE TABLE IF NOT EXISTS pendientes (id unique, th, ha, pr, di)");
         tx.executeSql("INSERT INTO pendientes (th, ha, pr, di) VALUES ('" + db.th + "', '" + db.ha + "', '" + db.pr + "', '" + db.di + "')");
     },
