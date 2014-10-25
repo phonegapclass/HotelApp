@@ -20,19 +20,15 @@ var db = {
         navigator.notification.alert('Reserva en espera de conexión',null,'Guardado','Aceptar');
     },
     leerPendientes: function(){
-        alert(1);
         db.crearDB().transaction(db.selectPendientes,db.error);
     },
     selectPendientes: function(tx){
-        alert(2);
         tx.executeSql("SELECT * FROM pendientes",[],db.resultadosPendientes,null);
     },
     resultadosPendientes: function(tx,res){
-        alert(3);
         var cant = res.rows.length;
         if(cant>0){
             for(var i = 0;i < cant;i++){
-                alert(i);
                 var th = res.rows.item(i).th;
                 var ha = res.rows.item(i).ha;
                 var pr = res.rows.item(i).pr;
@@ -59,6 +55,28 @@ var db = {
         $.mobile.loading( 'hide' );
         navigator.notification.alert('Se ha registrado su reserva',null,'Reserva Exitosa','Aceptar');
     },
+    leerHistorial: function(){
+        db.crearDB().transaction(db.selectHistorial,db.error);
+    },
+    selectHistorial: function(tx){
+        tx.executeSql("SELECT * FROM pendientes",[],db.resultadosHistorial,null);
+    },
+    resultadosHistorial: function(tx,res){
+        var cant = res.rows.length;
+        var ret = '<tr><td colspan="4">No hay registros guardados en Historial</td></tr>';
+        if(cant>0){
+            for(var i = 0;i < cant;i++){
+                var th = res.rows.item(i).th;
+                var ha = res.rows.item(i).ha;
+                var pr = res.rows.item(i).pr;
+                var di = res.rows.item(i).di;
+                
+                ret += '<tr><td>'+th+'</td><td>'+ha+'</td><td>'+pr+'</td><td>'+di+'</td></tr>';
+            }
+        }
+        $('#showHist').html(ret);
+    },
+    //-------------------ERROR---------------------
     error: function(err){
         $.mobile.loading( 'hide' );
         alert('Error: '+err.code);
