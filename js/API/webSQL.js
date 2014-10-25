@@ -65,6 +65,7 @@ var db = {
         var cant = res.rows.length;
         var ret = '<tr><td colspan="4">No hay registros guardados en Historial</td></tr>';
         if(cant>0){
+            ret = '';
             for(var i = 0;i < cant;i++){
                 var th = res.rows.item(i).th;
                 var ha = res.rows.item(i).ha;
