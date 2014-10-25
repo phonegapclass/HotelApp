@@ -25,7 +25,7 @@ var db = {
     },
     selectPendientes: function(tx){
         alert(2);
-        //tx.executeSql("SELECT * FROM pendientes",[],db.resultadosPendientes,null);
+        tx.executeSql("SELECT * FROM pendientes",[],db.resultadosPendientes,null);
     },
     resultadosPendientes: function(tx,res){
         alert(3);
