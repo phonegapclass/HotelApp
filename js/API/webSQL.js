@@ -21,15 +21,15 @@ var db = {
     },
     leerPendientes: function(){
         alert(1);
-        db.crearDB().transaction(db.selectPendientes,db.error,null);
+        //db.crearDB().transaction(db.selectPendientes,db.error,null);
     },
     selectPendientes: function(tx){
         alert(2);
-        tx.executeSql("SELECT * FROM pendientes",[],db.resultadosPendientes,db.error);
+        //tx.executeSql("SELECT * FROM pendientes",[],db.resultadosPendientes,null);
     },
     resultadosPendientes: function(tx,res){
         alert(3);
-        var cant = res.rows.length;
+        /*var cant = res.rows.length;
         if(cant>0){
             for(var i = 0;i < cant;i++){
                 alert(i);
@@ -41,7 +41,7 @@ var db = {
                 fn.enviarReserva(th,ha,pr,di);
                 tx.executeSql("DELETE FROM pendientes WHERE id='" + res.rows.item(i).id + "'");
             }
-        }
+        }*/
     },
     //-------------------HISTORIAL---------------------
     agregarHistorial: function(th,ha,pr,di){
