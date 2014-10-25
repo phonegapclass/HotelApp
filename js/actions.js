@@ -97,8 +97,7 @@ var fn = {
         }
     },
     sincronizarReserva: function(){
-        alert();
-        //db.leerPendientes();
+        db.leerPendientes();
     }
 };
 $(fn.init);
