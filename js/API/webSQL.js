@@ -29,7 +29,7 @@ var db = {
     },
     resultadosPendientes: function(tx,res){
         alert(3);
-        /*var cant = res.rows.length;
+        var cant = res.rows.length;
         if(cant>0){
             for(var i = 0;i < cant;i++){
                 alert(i);
@@ -41,7 +41,7 @@ var db = {
                 fn.enviarReserva(th,ha,pr,di);
                 tx.executeSql("DELETE FROM pendientes WHERE id='" + res.rows.item(i).id + "'");
             }
-        }*/
+        }
     },
     //-------------------HISTORIAL---------------------
     agregarHistorial: function(th,ha,pr,di){
