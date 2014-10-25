@@ -93,6 +93,10 @@ var fn = {
         }else{
             alert('Todos los campos son requeridos');
         }
+    },
+    sincronizarReserva: function(){
+        //Leer la tabla de pendientes
+            //llamar a función fn.enviarReserva()
     }
 };
 $(fn.init);
