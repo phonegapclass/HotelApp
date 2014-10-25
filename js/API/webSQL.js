@@ -21,7 +21,7 @@ var db = {
     },
     leerPendientes: function(){
         alert(1);
-        db.crearDB().transaction(db.selectPendientes,db.error,null);
+        db.crearDB().transaction(db.selectPendientes,db.error);
     },
     selectPendientes: function(tx){
         alert(2);
